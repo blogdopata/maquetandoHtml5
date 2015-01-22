@@ -54,6 +54,7 @@ nav{
 	background-color: #80bca3;
 	padding: 0 0.5em;
 	position: relative;
+	box-shadow: rgba(0,0,0,0.5) 10px 10px 10px;
 }
 nav ul{
 	list-style: none;
@@ -131,8 +132,6 @@ footer p:last-child:after{
 	position: relative;
 	min-height: 128px;
 	margin-bottom: 2em;
-
-
 }
 #contenido .item .imagen_item{
 	float: left;
