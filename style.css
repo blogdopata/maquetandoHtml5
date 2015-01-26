@@ -1,0 +1,50 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?nuoyde');
+	src:url('fonts/icomoon.eot?#iefixnuoyde') format('embedded-opentype'),
+		url('fonts/icomoon.woff?nuoyde') format('woff'),
+		url('fonts/icomoon.ttf?nuoyde') format('truetype'),
+		url('fonts/icomoon.svg?nuoyde#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pen:before {
+	content: "\e908";
+	color: blue;
+	margin-right: 0.4em;
+}
+
+.icon-star:before {
+	content: "\e9d9";
+	color: orange;
+	margin-right: 0.4em;
+	position: relative;
+	top:.1em;
+}
+
+.icon-up:before {
+	content: "\ea32";
+	color: peru;
+	margin-right: 0.4em;
+
+}
+
+.icon-down:before {
+	content: "\ea36";
+	margin-right: 0.4em;
+}
