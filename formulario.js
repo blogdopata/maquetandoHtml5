@@ -7,7 +7,8 @@ var $form = $('#formulario'),
 
 //Eventos :
 function mostrarFormulario(){
-	$form.slideToggle()
+	$form.slideToggle();
+	return false;
 }
 
 $button.click(mostrarFormulario)
