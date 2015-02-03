@@ -111,6 +111,18 @@ nav ul #publicar_nav a{
 nav ul li a:hover{
 	background-color: red;
 }
+nav ul #publicar_nav a:hover{
+	box-shadow: 0 0 30px yellow;
+
+}
+
+nav ul #publicar_nav a.disabled {
+	background-color: gray;
+	cursor: pointer;
+	box-shadow: none;
+
+} 
+
 footer{
 	background-color: #22bce0;
 	text-align: center;

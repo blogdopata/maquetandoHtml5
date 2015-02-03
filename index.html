@@ -42,6 +42,7 @@
 		<input type="text" id="titulo" placeholder="Titulo" required>
 		
 		<input type="url" id="url" placeholder="Link" required> 
+		<input type="text" id="autor" placeholder="Autor" required> 
 		<input type="submit" value="Agregar">
 	</form>
 	<aside>
@@ -61,7 +62,7 @@
 				</a>
 			</h2>
 			<div class="autor_item">
-				por <a href="#">Joana Muñoz</a>
+				por <a href="#" id="lol">Joana Muñoz</a>
 			</div>
 			<div class="datos_item">
 				<a href="#" class="tag_item">pony</a>
@@ -281,7 +282,13 @@
 </body>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="formulario.js"></script>
+<script> 
 
+	var json = '{ "background": "red" }';
+var cssObject = JSON.parse(json);
+
+	$('.item').first().css(cssObject);
+</script>
 	
 </html>
 
