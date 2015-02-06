@@ -7,7 +7,8 @@ var $form = $('#formulario'),
 	$lista = $('#contenido'),
 	$post = $('.item').first();
 	/* con esta condicion pregunto si hay algo guardado entra al if en caso de que sea TRUE*/ 
-if (localStorage.getItem('autosave')) {
+	
+/*if (localStorage.getItem('autosave')) {
 	$titulo.val(sessionStorage.getItem('titulo'));
 	$url.val(sessionStorage.getItem('url'));
 
@@ -16,7 +17,7 @@ if (localStorage.getItem('autosave')) {
 		sessionStorage.setItem('url', $url.val());
 	},1000);
 
-};
+};*/
 //Eventos :
 function mostrarOcultarFormulario(){
 	$form.slideToggle();
