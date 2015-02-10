@@ -18,10 +18,11 @@ var $form = $('#formulario'),
 	},1000);
 
 };*/
-//Eventos :
+
 function mostrarOcultarFormulario(){
 	$form.slideToggle();
 	$lista.slideToggle();
+	$('video').slideToggle();
 	return false;
 }
 
@@ -31,7 +32,7 @@ function agregarPost () {
 		autor = $autor.val(),
 		$clone = $post.clone();
 		$clone.find('.titulo_item a').text(titulo).attr('href',url).attr('alt','lol');
-	
+		console.log($clone);
 		$clone.find('#lol').text(autor).attr('href','http://www.twitter.com');
 	
 		$clone.hide();/*opcional ya luego se mostrara con el fadeIn, de no ponerlo nunca lo muestra*/
@@ -42,7 +43,7 @@ function agregarPost () {
 		$url.val('');
 		$autor.val('nuevo autor');
 
-		$clone.fadeIn();/*muestra el nuvo post :D */
+		$clone.fadeIn();/*muestra el nuvo post :-D */
 		return false; /*Rompe el evento por default*/
 }
 $button.click(mostrarOcultarFormulario);
