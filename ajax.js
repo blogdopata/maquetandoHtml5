@@ -32,5 +32,23 @@ function obtenerGeoInfo(lat, lon){
 	var query =  'SELECT * FROM geo.placefinder WHERE text = "'+lat+', '+lon+'" AND gflags="R"';
 
 	query = encodeURIComponent(query);
+	//se le pasa un objeto con opciones 
+	$.ajax({
+		url: base_url+"q="+query,
+		dataType: 'jsonp',
+		jsonpCallback: 'procesarGeoInfo',
+		data: {
+			format: 'json'
+		}
+	});
+}
 
+function procesarGeoInfo(datos){
+	//console.log(datos);
+	var res    = datos.query.results.Result;
+	var barrio = res.neighborhood;
+	var ciudad = res.city;
+	var pais   = res.country;
+
+	$('#geo').append('<p><strong>'+barrio+'</strong><br>'+ciudad+', ' + pais + '</p>');
 }
