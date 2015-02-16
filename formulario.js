@@ -22,7 +22,7 @@ var $form = $('#formulario'),
 function mostrarOcultarFormulario(){
 	$form.slideToggle();
 	$lista.slideToggle();
-	$('video').slideToggle();
+	$('aside').slideToggle();
 	return false;
 }
 
