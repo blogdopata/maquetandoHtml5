@@ -7,8 +7,11 @@ $(function(){
 	});
 
 	$.get('usuario.json', function(info){
-		console.log(info);
+		var avatar = new Image();
+		avatar.src = info.avatar;
+		avatar.title = info.nombre+ ' ' + info.apellido
 
+		$('#avatar').append(avatar);
 	});
 
 
