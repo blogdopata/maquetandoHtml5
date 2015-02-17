@@ -49,6 +49,38 @@ function procesarGeoInfo(datos){
 	var barrio = res.neighborhood;
 	var ciudad = res.city;
 	var pais   = res.country;
+	var woeid  = res.woeid;
 
-	$('#geo').append('<p><strong>'+barrio+'</strong><br>'+ciudad+', ' + pais + '</p>');
+	$('#geo').prepend('<p><strong>'+barrio+'</strong><br>'+ciudad+', ' + pais + '</p>');
+
+	obtenerClima(woeid);
+}
+
+function obtenerClima(woeid){
+
+	var query =  'SELECT * FROM weather.forecast WHERE woeid ="'+woeid+'" and u="c"';
+
+	query = encodeURIComponent(query);
+	//se le pasa un objeto con opciones 
+	$.ajax({
+		url: base_url+"q="+query,
+		dataType: 'jsonp',
+		jsonpCallback: 'procesarClima',
+		data: {
+			format: 'json'
+		}
+	});
+
+}
+function procesarClima(datos){
+
+	var clima  = datos.query.results.channel;
+	var temp   = clima.item.condition.temp;
+	var unit   = clima.units.temperature;
+	var img    = new Image();
+	var code   = clima.item.condition.code;
+	img.src    = "http://l.yimg.com/a/i/us/we/52/"+ code +".gif"; 
+/*console.log(clima);*/
+	/*$('#clima').append(temp+ ' ' + unit +' °');*/
+	$("#clima").append(img).append(temp+' '+unit+'°');
 }
